@@ -1,0 +1,77 @@
+/* --------------------------
+  Base
+--------------------------- */
+
+body {
+  padding-top: 60px;
+	background: #0f4e7a;
+}
+
+svg {
+	margin: auto;
+  display: block;
+	width: 28%;
+}
+
+/* --------------------------
+  Keyframes
+--------------------------- */
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(500%);
+  }
+  60% {
+    transform: translateY(-10%);
+  }
+  80% {
+    transform: translateY(8%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes glow {
+  50% {
+    transform: scale(1.15) rotate(-5deg);
+    fill: #ffff85;
+    opacity: 1;
+  }
+}
+
+@keyframes outline {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* --------------------------
+  SVG Styles
+--------------------------- */
+
+.stars * {
+  transform-origin: 50% 50%;
+}
+
+.star {
+  animation: slide-up .6s ease-out backwards, glow .5s ease-in forwards;
+}
+
+.star:nth-of-type(1) {
+  animation-delay: .5s, 1.7s;
+}
+
+.star:nth-of-type(2) {
+  animation-delay: 0s, 1.4s;
+}
+
+.star:nth-of-type(3) {
+  animation-delay: .8s, 2s;
+}
+
+.stars-bg {
+  stroke-dasharray: 815;
+  stroke-dashoffset: 815;
+  animation: outline .6s 2.3s linear forwards;
+}
